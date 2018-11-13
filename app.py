@@ -9,7 +9,7 @@ from linebot.models import (ImageSendMessage, MessageEvent, TextMessage,
 
 app = Flask(__name__)
 img_list = []
-with open('imglist.txt', 'r', encoding='utf-8') as fin:
+with open('imglist.txt', 'r') as fin:
     for line in fin:
         img_list.append(line.strip())
 line_bot_api = LineBotApi('QIFODrc39Bd4bilZeOR3H/fZmeSKgRHxDl5EmY3U1dv4XES9pkEVATBqrmplpxIDqe/HE1lQ/4ieUpG5GuF0icB1DqT64UFyb+0qQvgVdzuu0wSkVR9V89p63x2sGPEQQJ9C9SiKyNBpA+i8SfJVqQdB04t89/1O/w1cDnyilFU=')
@@ -35,16 +35,15 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     r = '喵' * len(msg)
-    txt_msg = TextSendMessage(r)
     org, pre = get_random_photo()
-    
+    txt_msg = TextSendMessage(r)
     img_msg = ImageSendMessage(original_content_url=org, preview_image_url=pre)
     line_bot_api.reply_message(event.reply_token, [txt_msg, img_msg])
 
 def get_random_photo():
-    r = random.randint(0, len(img_list))
+    r = random.randint(0, len(img_list) - 1)
     s1 = img_list[r] + ".jpg"
-    s2 = img_list[r] + "s.jpg"
+    s2 = img_list[r] + "h.jpg"
     return s1, s2
 
 if __name__ == "__main__":
