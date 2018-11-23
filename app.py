@@ -47,13 +47,9 @@ def handle_message(event):
     msg_list = list()
     while i < len(r):
         print(i, r[i])
-        if i == True:
+        if r[i] == True:
             i += 1
-            print(i, 'Here is a photo', r[i])
-            try:
-                msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
-            except Exception as e:
-                print("Error in app.py:", e)
+            msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
         else:
             msg_list.append(TextSendMessage(text=r[i]))
         i += 1
@@ -65,6 +61,7 @@ def log(event):
     try: 
         user_id = event.source.user_id
         profile = line_bot_api.get_profile(user_id)
+        print("[UID] %s", user_id)
         print("%s: %s" % (profile.display_name, event.message.text))
     except: pass
 
