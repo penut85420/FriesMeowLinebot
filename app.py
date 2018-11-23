@@ -49,6 +49,7 @@ def handle_message(event):
         print(i, r[i])
         if i == True:
             i += 1
+            print(i, 'Here is a photo', r[i])
             try:
                 msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
             except Exception as e:
