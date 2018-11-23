@@ -41,6 +41,7 @@ def callback():
 @h.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+    if not msg.startswith("#"): return
     log(event)
     i = 0
     r = bot.response(msg)
