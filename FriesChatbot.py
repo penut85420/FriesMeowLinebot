@@ -17,7 +17,9 @@ class FriesChatbot:
 	def response(self, msg):
 		if not msg.startswith('#'): return None
 		cmd = msg.split()[0]
-		return self.function_map[cmd](msg)
+		if self.function_map.get(cmd):
+			return self.function_map[cmd](msg)
+		return ['勸你不要亂加#喔喵']
 
 	def function_photo(self, msg):
 		return [
