@@ -41,17 +41,32 @@ def callback():
 @h.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if not msg.startswith('#'): return 
+    log(event)
     i = 0
     r = bot.response(msg)
-    msg_list = []
+    msg_list = list()
+    log_list = list()
     while i < len(r):
         if i == True:
             i += 1
             msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
+            log_list.append("傳送圖片")
         else:
             msg_list.append(TextSendMessage(text=r[i]))
+            log_list.append(r[i])
         i += 1
+    print(log_list)
+    line_bot_api.reply_message(event.reply_token, msg_list)
+
+def log(event):
+    profile = None
+    user_id = None
+    try: 
+        user_id = event.source.user_id
+        profile = line_bot_api.get_profile(user_id)
+        print(profile.display_name)
+    except: pass
+
 
 if __name__ == "__main__":
     app.run(host='10.0.2.15', port='5000', debug=True, ssl_context=(
