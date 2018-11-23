@@ -46,10 +46,13 @@ def handle_message(event):
     r = bot.response(msg)
     msg_list = list()
     while i < len(r):
-        print(r[i])
+        print(i, r[i])
         if i == True:
             i += 1
-            msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
+            try:
+                msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
+            except Exception as e:
+                print("Error in app.py:", e)
         else:
             msg_list.append(TextSendMessage(text=r[i]))
         i += 1
