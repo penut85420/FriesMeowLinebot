@@ -9,12 +9,13 @@ from linebot.models import (ImageSendMessage, MessageEvent, TextMessage,
                             TextSendMessage)
 
 PhotoManager = importlib.import_module('PhotoManager')
-
+FriesChatbot = importlib.import_module('FriesChatbot')
 app = Flask(__name__)
 
 config = yaml.load(open('config.yaml', 'r', encoding='utf8'))
 line_bot_api = LineBotApi(config['token'])
 h = WebhookHandler(config['channel'])
+bot = FriesChatbot.FriesChatbot()
 
 @app.route("/")
 def hello():
@@ -40,13 +41,17 @@ def callback():
 @h.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if msg == '#召喚貓貓':
-        r = '喵' * random.randint(1, len(msg))
-        img_path = PhotoManager.rand_img()
-        img_url = 'https://daoppailoli.ddns.net:5000/images/' + img_path
-        txt_msg = TextSendMessage(r)
-        img_msg = ImageSendMessage(original_content_url=img_url, preview_image_url=img_url)
-        line_bot_api.reply_message(event.reply_token, [txt_msg, img_msg])
+    if not msg.startswith('#'): return 
+    i = 0
+    r = bot.response(msg)
+    msg_list = []
+    while i < len(r):
+        if i == True:
+            i += 1
+            msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
+        else:
+            msg_list.append(TextSendMessage(text=r[i]))
+        i += 1
 
 if __name__ == "__main__":
     app.run(host='10.0.2.15', port='5000', debug=True, ssl_context=(
