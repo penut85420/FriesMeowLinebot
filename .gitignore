@@ -105,3 +105,6 @@ venv.bak/
 
 # ignore
 config.yaml
+*.png
+*.jpg
+

@@ -40,7 +40,7 @@ def callback():
 @h.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    r = '喵' * random.randint(2, len(msg))
+    r = '喵' * random.randint(1, len(msg))
     img_path = PhotoManager.rand_img()
     img_url = 'https://daoppailoli.ddns.net:5000/images/' + img_path
     txt_msg = TextSendMessage(r)
@@ -48,7 +48,7 @@ def handle_message(event):
     line_bot_api.reply_message(event.reply_token, [txt_msg, img_msg])
 
 if __name__ == "__main__":
-    # app.run(host='10.0.2.15', port='5000', debug=True, ssl_context=(
-    #     '/etc/letsencrypt/live/daoppailoli.ddns.net/fullchain.pem', 
-    #     '/etc/letsencrypt/live/daoppailoli.ddns.net/privkey.pem'))
-    app.run()
+    app.run(host='10.0.2.15', port='5000', debug=True, ssl_context=(
+       '/etc/letsencrypt/live/daoppailoli.ddns.net/fullchain.pem', 
+       '/etc/letsencrypt/live/daoppailoli.ddns.net/privkey.pem'))
+    # app.run()
