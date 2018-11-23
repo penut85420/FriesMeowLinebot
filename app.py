@@ -23,10 +23,12 @@ def hello():
 
 @app.route('/images/<string:pid>')
 def get_image(pid):
+    print("IP", request.remote_addr)
     return send_file('Images/%s' % pid, mimetype='image/png')
 
 @app.route('/tarot/<string:pid>')
 def get_tarot(pid):
+    print("IP", request.remote_addr)
     return send_file('Tarot/%s' % pid, mimetype='image/png')
 
 @app.route("/", methods=['POST'])
