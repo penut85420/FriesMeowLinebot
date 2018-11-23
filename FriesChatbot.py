@@ -37,7 +37,21 @@ class FriesChatbot:
 		return self.fortune.get_fortune_format(target)
 
 	def function_tarot(self, msg):
-		return [True, TarotModule.get_rand_tarot()]
+		arg = msg.split()
+		if len(arg) < 2:
+			arg.append(1)
+		n = 0
+		try:
+			n = int(arg[1])
+		except:
+			n = 1
+		if n > 5:
+			n = 5
+		rtn = list()
+		for _ in range(0, n):
+			rtn.append(True)
+			rtn.append(TarotModule.get_rand_tarot())
+		return rtn
 
 if __name__ == "__main__":
 	fc = FriesChatbot()
@@ -46,7 +60,12 @@ if __name__ == "__main__":
 		"#貓貓籤筒 交往",
 		"#貓貓籤筒",
 		"#貓貓籤筒 ?",
-		"#貓貓塔羅"
+		"#貓貓塔羅",
+		"#貓貓塔羅 3",
+		"#貓貓塔羅 5",
+		"#貓貓塔羅 7",
+		"#貓貓塔羅 來亂",
+		"#沒這功能",
 	]
 	for s in msg_list:
 		print(fc.response(s))
