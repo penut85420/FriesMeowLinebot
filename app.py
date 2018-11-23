@@ -50,7 +50,7 @@ def handle_message(event):
         if i == True:
             i += 1
             msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
-            log_list.append("傳送圖片")
+            log_list.append("[傳送圖片]")
         else:
             msg_list.append(TextSendMessage(text=r[i]))
             log_list.append(r[i])
@@ -64,7 +64,7 @@ def log(event):
     try: 
         user_id = event.source.user_id
         profile = line_bot_api.get_profile(user_id)
-        print(profile.display_name)
+        print("%s: %s" % (profile.display_name, event.message.text))
     except: pass
 
 
