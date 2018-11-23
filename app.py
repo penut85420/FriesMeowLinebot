@@ -25,6 +25,9 @@ def hello():
 def get_image(pid):
     return send_file('Images/%s' % pid, mimetype='image/png')
 
+@app.route('/tarot/<string:pid>')
+def get_tarot(pid):
+    return send_file('Tarot/%s' % pid, mimetype='image/png')
 
 @app.route("/", methods=['POST'])
 def callback():

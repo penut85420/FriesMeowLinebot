@@ -3,6 +3,7 @@ import importlib, random
 
 FortuneModule = importlib.import_module('FortuneModule')
 PhotoManger = importlib.import_module('PhotoManager')
+TarotModule = importlib.import_module('TarotModule')
 
 class FriesChatbot:
 	def __init__(self):
@@ -10,6 +11,7 @@ class FriesChatbot:
 		self.function_map = {
 			'#貓貓籤筒': self.function_fortune,
 			'#召喚貓貓': self.function_photo,
+			'#貓貓塔羅': self.function_tarot,
 		}
 	
 	def response(self, msg):
@@ -32,13 +34,17 @@ class FriesChatbot:
 			return ["可以跟貓貓籤筒詢問願望、疾病、遺失物、盼望的人、蓋新居、搬家、旅行、結婚、交往的事喔ωωω"]
 		return self.fortune.get_fortune_format(target)
 
+	def function_tarot(self, msg):
+		return [True, TarotModule.get_rand_tarot()]
+
 if __name__ == "__main__":
 	fc = FriesChatbot()
 	msg_list = [
 		'#召喚貓貓',
 		"#貓貓籤筒 交往",
 		"#貓貓籤筒",
-		"#貓貓籤筒 ?"
+		"#貓貓籤筒 ?",
+		"#貓貓塔羅"
 	]
 	for s in msg_list:
 		print(fc.response(s))
