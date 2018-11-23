@@ -45,17 +45,14 @@ def handle_message(event):
     i = 0
     r = bot.response(msg)
     msg_list = list()
-    log_list = list()
     while i < len(r):
+        print(r[i])
         if i == True:
             i += 1
             msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
-            log_list.append("[傳送圖片]")
         else:
             msg_list.append(TextSendMessage(text=r[i]))
-            log_list.append(r[i])
         i += 1
-    print(log_list)
     line_bot_api.reply_message(event.reply_token, msg_list)
 
 def log(event):
