@@ -49,3 +49,8 @@
 > ![貓貓解牌](https://i.imgur.com/S4W1HlJm.png)
 + 也可以在後面加上牌的名稱獨立解釋
 > ![貓貓解牌 魔術師](https://i.imgur.com/HBx7ylem.png)
+
+### 參考資料
++ [樂樂小棧](http://mst168.idv.tw/tarot/TAROS/index.asp)
+	+ 塔羅資訊非常齊全的網站，超讚的很推薦！
++ [Major Arcana](https://en.wikipedia.org/wiki/Major_Arcana)
