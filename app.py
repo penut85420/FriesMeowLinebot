@@ -2,6 +2,7 @@
 import random
 import yaml
 import importlib
+from datetime import datetime
 from flask import Flask, abort, request, send_file
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
@@ -23,12 +24,10 @@ def hello():
 
 @app.route('/images/<string:pid>')
 def get_image(pid):
-    print("IP", request.remote_addr)
     return send_file('Images/%s' % pid, mimetype='image/png')
 
 @app.route('/tarot/<string:pid>')
 def get_tarot(pid):
-    print("IP", request.remote_addr)
     return send_file('Tarot/%s' % pid, mimetype='image/png')
 
 @app.route("/", methods=['POST'])
@@ -68,7 +67,7 @@ def log(event):
     try: 
         user_id = event.source.user_id
         profile = line_bot_api.get_profile(user_id)
-        print("[UID] %s", user_id)
+        print("[UID]", user_id, datetime.now())
         print("%s: %s" % (profile.display_name, event.message.text))
     except: pass
 
