@@ -13,6 +13,7 @@ from linebot.models import (ImageSendMessage, MessageEvent, TextMessage,
 PhotoManager = importlib.import_module('PhotoManager')
 FriesChatbot = importlib.import_module('FriesChatbot')
 DatabaseManager = importlib.import_module('DatabaseManager')
+TarotModule = importlib.import_module('TarotModule')
 app = Flask(__name__)
 
 config = yaml.load(open('config.yaml', 'r', encoding='utf8'))
@@ -58,7 +59,10 @@ def handle_message(event):
         if r[i] == True:
             i += 1
             msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
-            log_list.append(file_pattern.search(r[i]).group("name"))
+            n = file_pattern.search(r[i]).group("name")
+            m = TarotModule.file2name(n)
+            if m: log_list.append("[Tarot Img]", m)
+            else: log_list.append(r[i])
         else:
             msg_list.append(TextSendMessage(text=r[i]))
             log_list.append(r[i])
@@ -73,7 +77,7 @@ def log(event):
     try: 
         user_id = event.source.user_id
         profile = line_bot_api.get_profile(user_id)
-        print(dt, profile.display_name, user_id)
+        print(dt.strftime("%m/%d %H:%M:%S"), profile.display_name, user_id)
         print("[Receive]", event.message.text)
     except: pass
     return dt, user_id, event.message.text

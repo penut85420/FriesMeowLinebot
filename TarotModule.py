@@ -14,3 +14,17 @@ def get_rand_tarot():
 def id2name(id):
     if type(id) == int:
         id = '%.2d' % id
+    return tarot_idx[id]
+
+def file2name(file):
+    try: i = int(file[:2])
+    except: return None
+    return id2name('%.2d' % i)
+
+if __name__ == "__main__":
+    print(id2name("00"))
+    print(id2name(0))
+    print(file2name("00.jpg"))
+    print(file2name("not a tarot.jpg"))
+    
+    
