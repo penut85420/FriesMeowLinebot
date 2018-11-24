@@ -58,4 +58,4 @@ To "+ [示範 "
 ### 參考資料
 + [樂樂小棧](http://mst168.idv.tw/tarot/TAROS/index.asp)
 	+ 塔羅資訊非常齊全的網站，超讚的很推薦！
-+ [Major Arcana](https://en.wikipedia.org/wiki/Major_Arcana)
++ [Wiki: Major Arcana](https://en.wikipedia.org/wiki/Major_Arcana)
