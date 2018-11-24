@@ -5,7 +5,7 @@
 <img src="https://i.imgur.com/0Okbbcmm.jpg"/>
 </p>
 
-[FriesLinebot Readme 圖片版說明](https://tinyurl.com/FriesLinebotR)
+[FriesLinebot Readme 圖片版說明](https://tinyurl.com/FriesLinebotR)  
 [FriesLinebot Readme 文字版說明](https://tinyurl.com/FriesLinebot)
 
 ## 薯條喵喵喵ω
