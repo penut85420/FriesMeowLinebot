@@ -15,6 +15,7 @@ class FriesChatbot:
 			'#貓貓籤筒': self.function_fortune,
 			'#貓貓塔羅': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
+			'#召喚威廷': self.function_handsome,
 		}
 	
 	def response(self, msg, uid):
@@ -22,7 +23,7 @@ class FriesChatbot:
 		cmd = msg.split()[0]
 		if self.function_map.get(cmd):
 			return self.function_map[cmd](msg, uid)
-		return ['#召喚貓貓 #貓貓籤筒 #貓貓塔羅']
+		return ['#召喚貓貓 #貓貓籤筒 #貓貓塔羅 #貓貓解牌']
 
 	def function_photo(self, msg, uid):
 		return [
@@ -82,6 +83,16 @@ class FriesChatbot:
 		#return TarotModule.getKeywordByID(TarotModule.name2id(arg[1]))
 		return rtn_list
 
+	def function_handsome(self, msg, uid):
+		msg_list = [
+			"如此神聖的名諱豈是你這小小庶民可以直呼的?",
+			"威廷的帥，無所不在",
+			"人帥聲音又好聽，完美情人",
+			"高富帥就是威廷的代名詞",
+			"尊重、包容、友善、清新、正直、單純的好男人"
+		]
+		return [msg_list[random.randint(0, len(msg_list) - 1)]]
+
 if __name__ == "__main__":
 	fc = FriesChatbot()
 	uid = 'U3c70a0e93aaa36c5643ab480f7f1a023'
@@ -103,6 +114,7 @@ if __name__ == "__main__":
 		"#貓貓解牌 翻譯",
 		"#貓貓解牌 沒這張牌",
 		"#貓貓解牌 看不懂",
+		"#召喚威廷",
 	]
 	for s in msg_list:
 		print(fc.response(s, uid))
