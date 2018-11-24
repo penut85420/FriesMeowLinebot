@@ -61,7 +61,7 @@ def handle_message(event):
             msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
             n = file_pattern.search(r[i]).group("name")
             m = TarotModule.file2name(n)
-            if m: log_list.append("[Tarot Img]", m)
+            if m: log_list.append("[Tarot Img]" + m)
             else: log_list.append(r[i])
         else:
             msg_list.append(TextSendMessage(text=r[i]))
