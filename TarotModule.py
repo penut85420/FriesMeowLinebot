@@ -17,7 +17,7 @@ translate_info = ""
 with open(trans_path, 'r', encoding='utf8') as fin:
     for line in fin:
         translate_info += line
-
+translate_info = [translate_info, "大阿卡納牌使用翻譯請參考\nhttps://tinyurl.com/TarotTranslate"]
 def get_rand_tarot():
     i = random.randint(0, 77)
     return "https://daoppailoli.ddns.net:5000/tarot/%.2d.jpg" % i

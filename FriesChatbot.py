@@ -59,7 +59,8 @@ class FriesChatbot:
 		rtn_list = list()
 		m = len(arg)
 		if m > 1 and arg[1] == '翻譯':
-			rtn_list.append(TarotModule.getTranslate())
+			for item in TarotModule.getTranslate():
+				rtn_list.append(item)
 		elif m > 1:
 			if m > 6: m = 6
 			for i in arg[1:m]:
