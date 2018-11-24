@@ -59,7 +59,6 @@ def handle_message(event):
             msg_list.append(TextSendMessage(text=r[i]))
         i += 1
     line_bot_api.reply_message(event.reply_token, msg_list)
-    line_bot_api.reply_message(event.reply_token, msg_list)
 
 def log(event):
     profile = None
