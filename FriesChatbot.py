@@ -19,7 +19,7 @@ class FriesChatbot:
 		cmd = msg.split()[0]
 		if self.function_map.get(cmd):
 			return self.function_map[cmd](msg)
-		return ['勸你不要亂加#喔喵']
+		return ['#召喚貓貓 #貓貓籤筒 #貓貓塔羅']
 
 	def function_photo(self, msg):
 		return [
