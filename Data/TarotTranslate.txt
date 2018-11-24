@@ -9,3 +9,4 @@ Knight: 騎士
 Queen: 王后
 King: 國王
 大阿卡納牌使用翻譯請參考
+https://tinyurl.com/TarotTranslate
