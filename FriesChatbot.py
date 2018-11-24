@@ -9,9 +9,10 @@ class FriesChatbot:
 	def __init__(self):
 		self.fortune = FortuneModule.FortuneModule()
 		self.function_map = {
-			'#貓貓籤筒': self.function_fortune,
 			'#召喚貓貓': self.function_photo,
+			'#貓貓籤筒': self.function_fortune,
 			'#貓貓塔羅': self.function_tarot,
+			'#貓貓解牌': self.function_explain,
 		}
 	
 	def response(self, msg):
@@ -53,6 +54,24 @@ class FriesChatbot:
 			rtn.append(TarotModule.get_rand_tarot())
 		return rtn
 
+	def function_explain(self, msg):
+		arg = msg.split()
+		rtn_list = list()
+		m = len(arg)
+		if m > 1 and arg[1] == '翻譯':
+			rtn_list.append(TarotModule.getTranslate())
+		elif m > 1:
+			if m > 6: m = 6
+			for i in arg[1:m]:
+				card = TarotModule.getKeywordByID(TarotModule.name2id(i))
+				if card: rtn_list.append("「%s」代表：%s" % (i, card))
+				else:
+					rtn_list.append("找不到「%s」的說\n如果是小阿卡納牌（寶劍、權杖、聖杯、錢幣）要把數量詞或宮廷人物放在後面喔~\n例如：寶劍三、聖杯王后" % i)
+		else:
+			rtn_list.append("請告訴我你想解的牌，例如：#貓貓解牌 寶劍騎士")
+		#return TarotModule.getKeywordByID(TarotModule.name2id(arg[1]))
+		return rtn_list
+
 if __name__ == "__main__":
 	fc = FriesChatbot()
 	msg_list = [
@@ -66,6 +85,12 @@ if __name__ == "__main__":
 		"#貓貓塔羅 7",
 		"#貓貓塔羅 來亂",
 		"#沒這功能",
+		"#貓貓解牌 聖杯國王",
+		"#貓貓解牌 聖杯國王 世界",
+		"#貓貓解牌 聖杯國王 權杖王后 寶劍侍者 錢幣騎士 惡魔 戀人",
+		"#貓貓解牌",
+		"#貓貓解牌 翻譯",
+		"#貓貓解牌 沒這張牌",
 	]
 	for s in msg_list:
 		print(fc.response(s))
