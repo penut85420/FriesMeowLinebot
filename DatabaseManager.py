@@ -52,8 +52,6 @@ class DatabaseManager:
         self.execute(sql, val)
         return len(self.cursor.fetchall()) > 0
 
-    
-
     def foo(self):
         self.connect()
         self.cursor.execute("SELECT * FROM MESSAGE_LOG")

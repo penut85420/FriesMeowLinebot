@@ -11,12 +11,14 @@ from linebot.models import (ImageSendMessage, MessageEvent, TextMessage,
 
 PhotoManager = importlib.import_module('PhotoManager')
 FriesChatbot = importlib.import_module('FriesChatbot')
+DatabaseManager = importlib.import_module('DatabaseManager')
 app = Flask(__name__)
 
 config = yaml.load(open('config.yaml', 'r', encoding='utf8'))
 line_bot_api = LineBotApi(config['token'])
 h = WebhookHandler(config['channel'])
 bot = FriesChatbot.FriesChatbot()
+dbm = DatabaseManager.DatabaseManager()
 
 @app.route("/")
 def hello():
@@ -34,7 +36,6 @@ def get_tarot(pid):
 def callback():
     signature = request.headers['X-Line-Signature']
     body = request.get_data(as_text=True)
-    # app.logger.info("Request body: " + body)
     try:
         h.handle(body, signature)
     except InvalidSignatureError:
@@ -44,9 +45,8 @@ def callback():
 
 @h.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    msg = event.message.text
+    dt, uid, msg = log(event)
     if not msg.startswith("#"): return
-    log(event)
     i = 0
     r = bot.response(msg)
     msg_list = list()
@@ -59,16 +59,19 @@ def handle_message(event):
             msg_list.append(TextSendMessage(text=r[i]))
         i += 1
     line_bot_api.reply_message(event.reply_token, msg_list)
+    dbm.insert_msg_log([dt, uid, msg, str(msg_list)])
 
 def log(event):
     profile = None
     user_id = None
+    dt = datetime.now()
     try: 
         user_id = event.source.user_id
         profile = line_bot_api.get_profile(user_id)
-        print("[UID]", user_id, datetime.now())
-        print("%s: %s" % (profile.display_name, event.message.text))
+        print(dt, profile.display_name, user_id)
+        print("[Receive]", event.message.text)
     except: pass
+    return dt, user_id, event.message.text
 
 
 if __name__ == "__main__":
