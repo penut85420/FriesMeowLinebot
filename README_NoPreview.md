@@ -1,4 +1,4 @@
-# FriesMeowLineBot
+# FriesLinebot
 
 <!--
 Replace "> !["
