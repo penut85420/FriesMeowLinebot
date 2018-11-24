@@ -81,7 +81,7 @@ def log(event):
     try: 
         user_id = event.source.user_id
         profile = line_bot_api.get_profile(user_id)
-        print(dt.strftime("%Y-%m-%d %H:%M:%S"), profile.display_name, user_id)
+        print(dt.strftime("[%Y/%m/%d %H:%M:%S]"), profile.display_name, user_id)
         print("[Receive]", event.message.text)
     except: pass
     return dt, user_id, event.message.text
