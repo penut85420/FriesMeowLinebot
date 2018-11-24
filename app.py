@@ -51,7 +51,7 @@ def handle_message(event):
     dt, uid, msg = log(event)
     if not msg.startswith("#"): return
     i = 0
-    r = bot.response(msg)
+    r = bot.response(msg, uid)
     msg_list = list()
     log_list = list()
     while i < len(r):
