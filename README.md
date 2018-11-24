@@ -1,4 +1,10 @@
-# FriesMeowLineBot
+# FriesLinebot
+<p align='center'>
+<a href="https://line.me/R/ti/p/%40hld1679y"><img height="36" border="0" alt="加入好友" src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png"></a></br>
+<img src=https://i.imgur.com/Z9gbgJXm.png/>
+</p>
+
+[FriesLinebot Readme](https://tinyurl.com/FriesLinebot)
 
 ## 薯條喵喵喵ω
 
