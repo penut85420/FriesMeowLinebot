@@ -55,17 +55,21 @@ def handle_message(event):
     msg_list = list()
     log_list = list()
     while i < len(r):
-        print(i, r[i])
         if r[i] == True:
             i += 1
             msg_list.append(ImageSendMessage(original_content_url=r[i], preview_image_url=r[i]))
             n = file_pattern.search(r[i]).group("name")
             m = TarotModule.file2name(n)
-            if m: log_list.append("[Tarot Img]" + m)
-            else: log_list.append(n)
+            if m: 
+                log_list.append("[Tarot Img]" + m)
+                print("[Send Tarot]", m)
+            else: 
+                log_list.append(n)
+                print("[Send Photo]", n)
         else:
             msg_list.append(TextSendMessage(text=r[i]))
             log_list.append(r[i])
+            print("[Send Msg]", r[i])
         i += 1
     line_bot_api.reply_message(event.reply_token, msg_list)
     dbm.insert_msg_log([dt, uid, msg, str(log_list)])
