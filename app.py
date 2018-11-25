@@ -84,7 +84,7 @@ def log(event):
         print(dt.strftime("[%Y/%m/%d %H:%M:%S]"), profile.display_name, user_id)
         print("[Receive]", event.message.text)
     except: pass
-    return dt, user_id, event.message.text
+    return dt, user_id, event.message.text.replace("＃", "#")
 
 
 if __name__ == "__main__":

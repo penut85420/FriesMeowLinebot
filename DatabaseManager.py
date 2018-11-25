@@ -78,5 +78,7 @@ if __name__ == '__main__':
     # dbm.update_user_state("@@##UNKNOWN##@@", "HELLO")
     # print(dbm.is_user_exist("@@##UNKNOWN##@@"))
     # dbm.insert_msg_log([msg_date, uid, receive, send])
-    for i in dbm.get_lastest_tarot(["U3c70a0e93aaa36c5643ab480f7f1a023"]):
-        print(i)
+    sql = "SELECT * FROM USER_TABLE; SELECT * FROM USER_TABLE;"
+    dbm.execute(sql, [])
+    # for i in dbm.get_lastest_tarot(["U3c70a0e93aaa36c5643ab480f7f1a023"]):
+    #     print(i)
