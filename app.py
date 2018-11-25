@@ -83,7 +83,10 @@ def log(event):
         profile = line_bot_api.get_profile(user_id)
         print(dt.strftime("[%Y/%m/%d %H:%M:%S]"), profile.display_name, user_id)
         print("[Receive]", event.message.text)
-    except: pass
+    except Exception as e: 
+        print("[Error]", e)
+        print(dt.strftime("[%Y/%m/%d %H:%M:%S]"), user_id)
+        print("[Receive]", event.message.text)
     return dt, user_id, event.message.text.replace("＃", "#")
 
 
