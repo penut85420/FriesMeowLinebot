@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*- 
-import importlib, random
+import importlib
+import random
 
 FortuneModule = importlib.import_module('FortuneModule')
 PhotoManger = importlib.import_module('PhotoManager')
@@ -16,6 +17,7 @@ class FriesChatbot:
 			'#貓貓塔羅': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
 			'#召喚威廷': self.function_handsome,
+			'#召喚孫全': self.function_handsomelin,
 		}
 	
 	def response(self, msg, uid):
@@ -92,6 +94,9 @@ class FriesChatbot:
 			"尊重、包容、友善、清新、正直、單純的好男人"
 		]
 		return [msg_list[random.randint(0, len(msg_list) - 1)]]
+	
+	def function_handsomelin(self, msg, uid):
+		return ["快來看孫全帥氣的Solo (*´∀`)~♥\nhttps://youtu.be/AN1FNgc63JQ?t=146"]
 
 if __name__ == "__main__":
 	fc = FriesChatbot()
