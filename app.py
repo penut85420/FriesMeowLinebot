@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-import random
-import yaml
 import importlib
+import random
 import re
 from datetime import datetime
+
+import yaml
 from flask import Flask, abort, request, send_file
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
@@ -75,23 +76,16 @@ def handle_message(event):
     dbm.insert_msg_log([dt, uid, msg, str(log_list)])
 
 def log(event):
-    profile = None
-    user_id = None
+    user_id = event.source.user_id
     dt = datetime.now()
-    try: 
-        user_id = event.source.user_id
-        profile = line_bot_api.get_profile(user_id)
-        print(dt.strftime("[%Y/%m/%d %H:%M:%S]"), profile.display_name, user_id)
-        print("[Receive]", event.message.text)
-    except Exception as e: 
-        print("[Error]", e)
-        print(dt.strftime("[%Y/%m/%d %H:%M:%S]"), user_id)
-        print("[Receive]", event.message.text)
+    name = "User"
+    try: name = line_bot_api.get_profile(user_id).display_name
+    except: print("[Error] User profile not found")
+    print("[Receive]", dt.strftime("[%Y/%m/%d %H:%M:%S]"), name, user_id)
+    print("[Message]", event.message.text)
     return dt, user_id, event.message.text.replace("＃", "#")
 
-
 if __name__ == "__main__":
-    app.run(host='10.0.2.15', port='5000', debug=True, ssl_context=(
-       '/etc/letsencrypt/live/daoppailoli.ddns.net/fullchain.pem', 
-       '/etc/letsencrypt/live/daoppailoli.ddns.net/privkey.pem'))
+    app.run(host='10.0.2.15', port='5000', debug=True
+        , ssl_context=(config['cert'], config['key']))
     # app.run()
