@@ -53,7 +53,7 @@ class FriesChatbot:
 		if n > 78: n = 78
 		if n < 1: n = 1
 		rtn = list()
-		if n < 5:
+		if n <= 5:
 			for i in TarotModule.get_shuffle_deck(n):
 				rtn.append(True)
 				rtn.append(TarotModule.get_img_by_id(i))
