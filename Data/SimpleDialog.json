@@ -26,11 +26,18 @@
         ]
     },
     {
+        "reg": ["召喚孫全"],
+        "res": ["快來看孫全帥氣的Solo (*´∀`)~♥\nhttps://youtu.be/AN1FNgc63JQ?t=146"]
+    },
+    {
         "reg": [
-            "召喚孫全"
-        ],
+            "github",
+            "官方網站",
+            "官網",
+            "source"
+        ], 
         "res": [
-            "快來看孫全帥氣的Solo (*´∀`)~♥\nhttps://youtu.be/AN1FNgc63JQ?t=146"
+            "薯條喵喵喵 Linebot 官方網站\nhttps://github.com/penut85420/FriesMeowLinebot"
         ]
     },
     {
