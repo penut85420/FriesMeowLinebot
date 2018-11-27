@@ -47,16 +47,21 @@ class FriesChatbot:
 		if len(arg) < 2:
 			arg.append(1)
 		n = 0
-		try:
-			n = int(arg[1])
-		except:
-			n = 1
-		if n > 5:
-			n = 5
+		try: n = int(arg[1])
+		except: n = 1
+		if n > 78: n = 78
+		if n < 1: n = 1
 		rtn = list()
-		for _ in range(0, n):
-			rtn.append(True)
-			rtn.append(TarotModule.get_rand_tarot())
+		if n < 5:
+			for i in TarotModule.get_shuffle_deck(n):
+				rtn.append(True)
+				rtn.append(TarotModule.get_img_by_id(i))
+		else:
+			deck = TarotModule.get_shuffle_deck(n)
+			msg = TarotModule.id2name(deck[0])
+			for i in deck[1:]:
+				msg += "、" + TarotModule.id2name(i)
+			rtn.append(msg)
 		return rtn
 
 	def function_explain(self, msg, uid):
@@ -120,6 +125,8 @@ if __name__ == "__main__":
 		"#貓貓解牌 沒這張牌",
 		"#貓貓解牌 看不懂",
 		"#召喚威廷",
+		"#貓貓塔羅 10",
+		"#貓貓塔羅 100",
 	]
 	for s in msg_list:
 		print(fc.response(s, uid))
