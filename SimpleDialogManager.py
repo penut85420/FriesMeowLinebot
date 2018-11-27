@@ -32,6 +32,7 @@ class SimpleDialogManager:
         for p in self.pattern:
             if p.match(msg):
                 return p.get_res()
+        return None
 
 if __name__ == "__main__":
     sdm = SimpleDialogManager()

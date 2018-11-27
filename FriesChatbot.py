@@ -6,18 +6,18 @@ FortuneModule = importlib.import_module('FortuneModule')
 PhotoManger = importlib.import_module('PhotoManager')
 TarotModule = importlib.import_module('TarotModule')
 DatabaseManager = importlib.import_module('DatabaseManager')
+SimpleDialogManager = importlib.import_module('SimpleDialogManager')
 
 class FriesChatbot:
 	def __init__(self):
 		self.fortune = FortuneModule.FortuneModule()
 		self.dbm = DatabaseManager.DatabaseManager()
+		self.sdm = SimpleDialogManager.SimpleDialogManager()
 		self.function_map = {
 			'#召喚貓貓': self.function_photo,
 			'#貓貓籤筒': self.function_fortune,
 			'#貓貓塔羅': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
-			'#召喚威廷': self.function_handsome,
-			'#召喚孫全': self.function_handsomelin,
 		}
 	
 	def response(self, msg, uid):
@@ -25,7 +25,8 @@ class FriesChatbot:
 		cmd = msg.split()[0]
 		if self.function_map.get(cmd):
 			return self.function_map[cmd](msg, uid)
-		return ['#召喚貓貓 #貓貓籤筒 #貓貓塔羅 #貓貓解牌']
+		return self.function_simple_dialog(msg, uid)
+		# return ['#召喚貓貓 #貓貓籤筒 #貓貓塔羅 #貓貓解牌']
 
 	def function_photo(self, msg, uid):
 		return [
@@ -90,18 +91,8 @@ class FriesChatbot:
 		#return TarotModule.getKeywordByID(TarotModule.name2id(arg[1]))
 		return rtn_list
 
-	def function_handsome(self, msg, uid):
-		msg_list = [
-			"如此神聖的名諱豈是你這小小庶民可以直呼的?",
-			"威廷的帥，無所不在",
-			"人帥聲音又好聽，完美情人",
-			"高富帥就是威廷的代名詞",
-			"尊重、包容、友善、清新、正直、單純的好男人"
-		]
-		return [msg_list[random.randint(0, len(msg_list) - 1)]]
-	
-	def function_handsomelin(self, msg, uid):
-		return ["快來看孫全帥氣的Solo (*´∀`)~♥\nhttps://youtu.be/AN1FNgc63JQ?t=146"]
+	def function_simple_dialog(self, msg, uid):
+		return [self.sdm.get_res(msg[1:])]
 
 if __name__ == "__main__":
 	fc = FriesChatbot()
@@ -126,7 +117,9 @@ if __name__ == "__main__":
 		"#貓貓解牌 看不懂",
 		"#召喚威廷",
 		"#貓貓塔羅 10",
-		"#貓貓塔羅 100",
+		"#貓貓塔羅 20",
+		"#嗨",
+		"#召喚孫全",
 	]
 	for s in msg_list:
 		print(fc.response(s, uid))
