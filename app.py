@@ -11,17 +11,17 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import (ImageSendMessage, MessageEvent, TextMessage,
                             TextSendMessage)
 
-PhotoManager = importlib.import_module('PhotoManager')
-FriesChatbot = importlib.import_module('FriesChatbot')
-DatabaseManager = importlib.import_module('DatabaseManager')
-TarotModule = importlib.import_module('TarotModule')
+import TarotModule
+from DatabaseManager import DatabaseManager
+from FriesChatbot import FriesChatbot
+
 app = Flask(__name__)
 
 config = yaml.load(open('config.yaml', 'r', encoding='utf8'))
 line_bot_api = LineBotApi(config['token'])
-h = WebhookHandler(config['channel'])
-bot = FriesChatbot.FriesChatbot()
-dbm = DatabaseManager.DatabaseManager()
+handle = WebhookHandler(config['channel'])
+bot = FriesChatbot()
+dbm = DatabaseManager()
 file_pattern = re.compile("https.*//?(?P<name>.*\\.(.*))")
 
 @app.route("/")
@@ -41,13 +41,13 @@ def callback():
     signature = request.headers['X-Line-Signature']
     body = request.get_data(as_text=True)
     try:
-        h.handle(body, signature)
+        handle.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
 
     return 'OK'
 
-@h.add(MessageEvent, message=TextMessage)
+@handle.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     dt, uid, msg = log(event)
     if not msg.startswith("#"): return
@@ -80,12 +80,11 @@ def log(event):
     dt = datetime.now()
     name = "User"
     try: name = line_bot_api.get_profile(user_id).display_name
-    except: print("[Error] User profile not found")
+    except: pass
     print("[Receive]", dt.strftime("[%Y/%m/%d %H:%M:%S]"), name, user_id)
     print("[Message]", event.message.text)
     return dt, user_id, event.message.text.replace("＃", "#")
 
 if __name__ == "__main__":
-    app.run(host='10.0.2.15', port='5000', debug=True
+    app.run(host=config['ip'], port=config['port'], debug=True
         , ssl_context=(config['cert'], config['key']))
-    # app.run()

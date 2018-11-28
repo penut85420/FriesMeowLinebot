@@ -2,17 +2,23 @@
 import importlib
 import random
 
-FortuneModule = importlib.import_module('FortuneModule')
-PhotoManger = importlib.import_module('PhotoManager')
-TarotModule = importlib.import_module('TarotModule')
-DatabaseManager = importlib.import_module('DatabaseManager')
-SimpleDialogManager = importlib.import_module('SimpleDialogManager')
+import PhotoManager
+import TarotModule
+from DatabaseManager import DatabaseManager
+from FortuneModule import FortuneModule
+from SimpleDialogManager import SimpleDialogManager
+
+# FortuneModule = importlib.import_module('FortuneModule')
+# PhotoManger = importlib.import_module('PhotoManager')
+# TarotModule = importlib.import_module('TarotModule')
+# DatabaseManager = importlib.import_module('DatabaseManager')
+# SimpleDialogManager = importlib.import_module('SimpleDialogManager')
 
 class FriesChatbot:
 	def __init__(self):
-		self.fortune = FortuneModule.FortuneModule()
-		self.dbm = DatabaseManager.DatabaseManager()
-		self.sdm = SimpleDialogManager.SimpleDialogManager()
+		self.fortune = FortuneModule()
+		self.dbm = DatabaseManager()
+		self.sdm = SimpleDialogManager()
 		self.function_map = {
 			'#召喚貓貓': self.function_photo,
 			'#貓貓籤筒': self.function_fortune,
@@ -31,7 +37,7 @@ class FriesChatbot:
 	def function_photo(self, msg, uid):
 		return [
 			"熱騰騰的薯條照片來囉~" + '喵' * random.randint(1, len(msg)),
-			True, PhotoManger.rand_imgurl()
+			True, PhotoManager.rand_imgurl()
 		]
 	
 	def function_fortune(self, msg, uid):
