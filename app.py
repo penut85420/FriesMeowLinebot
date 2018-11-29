@@ -77,13 +77,24 @@ def handle_message(event):
 
 def log(event):
     user_id = event.source.user_id
+    msg = event.message.text.replace("＃", "#")
     dt = datetime.now()
     name = "User"
-    try: name = line_bot_api.get_profile(user_id).display_name
-    except: pass
+    if event.source.type == 'user':
+        name = line_bot_api.get_profile(user_id).display_name
+        if not msg.startswith('#'):
+            msg = '#' + msg
+    elif event.source.type == 'room':
+        name = line_bot_api.get_room_member_profile(event.source.room_id, user_id).display_name
+    elif event.source.type == 'group':        
+        name = line_bot_api.get_group_member_profile(event.source.group_id, user_id).display_name
+    elif event.source.type == 'memberJoined':
+        name = line_bot_api.get_group_member_profile(event.source.group_id, user_id).display_name
+        msg = "#__MemberJoinedGroup__ " + name
+
     print("[Receive]", dt.strftime("[%Y/%m/%d %H:%M:%S]"), name, user_id)
     print("[Message]", event.message.text)
-    return dt, user_id, event.message.text.replace("＃", "#")
+    return dt, user_id, msg 
 
 if __name__ == "__main__":
     app.run(host=config['ip'], port=config['port'], debug=True

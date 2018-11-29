@@ -24,6 +24,7 @@ class FriesChatbot:
 			'#貓貓籤筒': self.function_fortune,
 			'#貓貓塔羅': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
+                        '#__MemberJoinedGroup__': self.function_join,
 		}
 	
 	def response(self, msg, uid):
@@ -96,6 +97,10 @@ class FriesChatbot:
 				return self.function_explain(query, uid)
 		#return TarotModule.getKeywordByID(TarotModule.name2id(arg[1]))
 		return rtn_list
+
+        def function_join(self, msg, uid):
+            arg = msg.split(' ')
+            return ['歡迎' + arg[1] + '的加入>ω<']
 
 	def function_simple_dialog(self, msg, uid):
 		return [self.sdm.get_res(msg[1:])]
