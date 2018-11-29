@@ -4,7 +4,7 @@
 <img height="36" border="0" alt="加入好友" src="https://tinyurl.com/yb9jephs"></a><br/>
 <img src="https://i.imgur.com/0Okbbcmm.jpg"/>
 </p>
-
+[好友人數達到上限，先來加入群組試試看吧～](https://line.me/R/ti/g/erpyZX0yk3)  
 [FriesLinebot Readme 圖片版說明](https://tinyurl.com/FriesLinebotR)  
 [FriesLinebot Readme 文字版說明](https://tinyurl.com/FriesLinebot)
 
