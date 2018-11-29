@@ -8,11 +8,6 @@ from DatabaseManager import DatabaseManager
 from FortuneModule import FortuneModule
 from SimpleDialogManager import SimpleDialogManager
 
-# FortuneModule = importlib.import_module('FortuneModule')
-# PhotoManger = importlib.import_module('PhotoManager')
-# TarotModule = importlib.import_module('TarotModule')
-# DatabaseManager = importlib.import_module('DatabaseManager')
-# SimpleDialogManager = importlib.import_module('SimpleDialogManager')
 
 class FriesChatbot:
 	def __init__(self):
