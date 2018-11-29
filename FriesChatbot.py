@@ -19,7 +19,7 @@ class FriesChatbot:
 			'#貓貓籤筒': self.function_fortune,
 			'#貓貓塔羅': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
-                        '#__MemberJoinedGroup__': self.function_join,
+            '#__MemberJoinedGroup__': self.function_join,
 		}
 	
 	def response(self, msg, uid):
@@ -28,7 +28,6 @@ class FriesChatbot:
 		if self.function_map.get(cmd):
 			return self.function_map[cmd](msg, uid)
 		return self.function_simple_dialog(msg, uid)
-		# return ['#召喚貓貓 #貓貓籤筒 #貓貓塔羅 #貓貓解牌']
 
 	def function_photo(self, msg, uid):
 		return [
@@ -90,12 +89,14 @@ class FriesChatbot:
 				for i in last_tarot:
 					query += " " + i
 				return self.function_explain(query, uid)
-		#return TarotModule.getKeywordByID(TarotModule.name2id(arg[1]))
 		return rtn_list
 
-        def function_join(self, msg, uid):
-            arg = msg.split(' ')
-            return ['歡迎' + arg[1] + '的加入>ω<']
+	def function_join(self, msg, uid):
+		arg = msg.split(' ')
+		return [
+			'歡迎' + arg[1] + '的加入>ω<\n讓我召喚一隻貓貓來慶祝~', 
+			True, PhotoManager.rand_imgurl()
+		]
 
 	def function_simple_dialog(self, msg, uid):
 		return [self.sdm.get_res(msg[1:])]
@@ -126,6 +127,7 @@ if __name__ == "__main__":
 		"#貓貓塔羅 20",
 		"#嗨",
 		"#召喚孫全",
+		"#__MemberJoinedGroup__ ICC"
 	]
 	for s in msg_list:
 		print(fc.response(s, uid))
