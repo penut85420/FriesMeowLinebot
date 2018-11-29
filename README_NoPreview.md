@@ -7,11 +7,13 @@ To "+ [示範 "
 <p align='center'>
 <a href="https://line.me/R/ti/p/%40hld1679y">
 <img height="36" border="0" alt="加入好友" src="https://tinyurl.com/yb9jephs"></a><br/>
-<img src="https://i.imgur.com/0Okbbcmm.jpg"/>
+<img src="https://i.imgur.com/0Okbbcmm.jpg"/><br/>
+目前好友人數已滿！！<br/>
+歡迎加入群組，不需加好友也能玩薯條～<br/>
+<a href="https://line.me/R/ti/g/erpyZX0yk3">加入薯條喵喵喵群組&gt;ω&lt;塔羅研究群</a>
 </p>
 
 
-[好友人數達到上限，先來加入群組試試看吧～](https://line.me/R/ti/g/erpyZX0yk3)  
 [FriesLinebot Readme 圖片版說明](https://tinyurl.com/FriesLinebotR)  
 [FriesLinebot Readme 文字版說明](https://tinyurl.com/FriesLinebot)
 
