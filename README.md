@@ -5,7 +5,8 @@
 <img src="https://i.imgur.com/0Okbbcmm.jpg"/><br/>
 目前好友人數已滿！！<br/>
 歡迎加入群組，不需加好友也能玩薯條～<br/>
-<a href="https://line.me/R/ti/g/erpyZX0yk3">加入薯條喵喵喵&gt;ω&lt;歡樂占卜社</a>
+<a href="https://line.me/R/ti/g/erpyZX0yk3">加入薯條喵喵喵&gt;ω&lt;歡樂占卜社</a><br/>
+<img src="https://i.imgur.com/VZ5F1X0.jpg"/><br/>
 </p>
 
 [FriesLinebot Readme 圖片版說明](https://tinyurl.com/FriesLinebotR)  
