@@ -16,9 +16,13 @@ class FriesChatbot:
 		self.sdm = SimpleDialogManager()
 		self.function_map = {
 			'#召喚貓貓': self.function_photo,
+			'#召喚薯條': self.function_photo,
 			'#貓貓籤筒': self.function_fortune,
+			'#喵喵籤筒': self.function_fortune,
 			'#貓貓塔羅': self.function_tarot,
+			'#喵喵塔羅': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
+			'#喵喵解牌': self.function_explain,
             '#__MemberJoinedGroup__': self.function_join,
 		}
 	
@@ -30,10 +34,12 @@ class FriesChatbot:
 		return self.function_simple_dialog(msg, uid)
 
 	def function_photo(self, msg, uid):
-		return [
-			"熱騰騰的薯條照片來囉~" + '喵' * random.randint(1, len(msg)),
-			True, PhotoManager.rand_imgurl()
-		]
+		try:
+			return [
+				"熱騰騰的薯條照片來囉~" + '喵' * random.randint(1, len(msg)),
+				True, PhotoManager.rand_imgurl()
+			]
+		except: return ["現在沒有照片可以提供QQ"]
 	
 	def function_fortune(self, msg, uid):
 		seg = msg.split()
@@ -127,7 +133,11 @@ if __name__ == "__main__":
 		"#貓貓塔羅 20",
 		"#嗨",
 		"#召喚孫全",
-		"#__MemberJoinedGroup__ ICC"
+		"#__MemberJoinedGroup__ ICC",
+		"#召喚薯條",
+		"#喵喵籤筒",
+		"#喵喵塔羅",
+		"#喵喵解牌",
 	]
 	for s in msg_list:
 		print(fc.response(s, uid))
