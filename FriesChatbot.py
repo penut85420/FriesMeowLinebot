@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 import importlib
 import random
 
@@ -18,17 +18,14 @@ class FriesChatbot:
 			'#召喚貓貓': self.function_photo,
 			'#召喚薯條': self.function_photo,
 			'#貓貓籤筒': self.function_fortune,
-			'#喵喵籤筒': self.function_fortune,
 			'#貓貓塔羅': self.function_tarot,
-			'#喵喵塔羅': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
-			'#喵喵解牌': self.function_explain,
             '#__MemberJoinedGroup__': self.function_join,
 		}
-	
+
 	def response(self, msg, uid):
 		if not msg.startswith('#'): return None
-		cmd = msg.split()[0]
+		cmd = msg.split()[0].replace("喵", "貓").replace("桶", "筒")
 		if self.function_map.get(cmd):
 			return self.function_map[cmd](msg, uid)
 		return self.function_simple_dialog(msg, uid)
@@ -40,7 +37,7 @@ class FriesChatbot:
 				True, PhotoManager.rand_imgurl()
 			]
 		except: return ["現在沒有照片可以提供QQ"]
-	
+
 	def function_fortune(self, msg, uid):
 		seg = msg.split()
 		if len(seg) < 2:
@@ -100,7 +97,7 @@ class FriesChatbot:
 	def function_join(self, msg, uid):
 		arg = msg.split(' ')
 		return [
-			'歡迎' + arg[1] + '的加入>ω<\n讓我召喚一隻貓貓來慶祝~', 
+			'歡迎' + arg[1] + '的加入>ω<\n讓我召喚一隻貓貓來慶祝~',
 			True, PhotoManager.rand_imgurl()
 		]
 
@@ -124,7 +121,7 @@ if __name__ == "__main__":
 		"#貓貓解牌 聖杯國王",
 		"#貓貓解牌 聖杯國王 世界",
 		"#貓貓解牌 聖杯國王 權杖王后 寶劍侍者 錢幣騎士 惡魔 戀人",
-		"#貓貓解牌",
+		# "#貓貓解牌",
 		"#貓貓解牌 翻譯",
 		"#貓貓解牌 沒這張牌",
 		"#貓貓解牌 看不懂",
@@ -133,11 +130,12 @@ if __name__ == "__main__":
 		"#貓貓塔羅 20",
 		"#嗨",
 		"#召喚孫全",
-		"#__MemberJoinedGroup__ ICC",
+		# "#__MemberJoinedGroup__ ICC",
 		"#召喚薯條",
 		"#喵喵籤筒",
 		"#喵喵塔羅",
-		"#喵喵解牌",
+		# "#喵喵解牌",
+		"#喵喵籤桶",
 	]
 	for s in msg_list:
-		print(fc.response(s, uid))
+		print("Receive", s, "Response", fc.response(s, uid))
