@@ -1,0 +1,704 @@
+{
+    "00": {
+        "name": "The Fool",
+        "positive": {
+            "related": "Folly, mania, extravagance, intoxication, delirium, frenzy, bewrayment."
+        },
+        "reversed": {
+            "related": "Negligence, absence, distribution, carelessness, apathy, nullity, vanity."
+        }
+    },
+    "01": {
+        "name": "The Magician",
+        "positive": {
+            "related": "Skill, diplomacy, address, subtlety; sickness, pain, loss, disaster, snares of enemies; self-confidence, will; the Querent, if male."
+        },
+        "reversed": {
+            "related": "Physician, Magus, mental disease, disgrace, disquiet."
+        }
+    },
+    "02": {
+        "name": "High Priestess",
+        "positive": {
+            "related": "Secrets, mystery, the future as yet unrevealed; the woman who interests the Querent, if male; the Querent herself, if female; silence, tenacity; mystery, wisdom, science."
+        },
+        "reversed": {
+            "related": "Passion, moral or physical ardour, conceit, surface knowledge."
+        }
+    },
+    "03": {
+        "name": "Empress",
+        "positive": {
+            "related": "Fruitfulness, action, initiative, length of days; the unknown, clandestine; also difficulty, doubt, ignorance."
+        },
+        "reversed": {
+            "related": "Light, truth, the unravelling of involved matters, public rejoicings; according to another reading, vacillation."
+        }
+    },
+    "04": {
+        "name": "Emperor",
+        "positive": {
+            "related": "Stability, power, protection, realization; a great person; aid, reason, conviction; also authority and will."
+        },
+        "reversed": {
+            "related": "Benevolence, compassion, credit; also confusion to enemies, obstruction, immaturity."
+        }
+    },
+    "05": {
+        "name": "Hierophant",
+        "positive": {
+            "related": "Marriage, alliance, captivity, servitude; by another account, mercy and goodness; inspiration; the man to whom the Querent has recourse."
+        },
+        "reversed": {
+            "related": "Society, good understanding, concord, overkindness, weakness."
+        }
+    },
+    "06": {
+        "name": "The Lovers",
+        "positive": {
+            "related": "Attraction, love, beauty, trials overcome."
+        },
+        "reversed": {
+            "related": "Failure, foolish designs. Another account speaks of marriage frustrated and contrarieties of all kinds."
+        }
+    },
+    "07": {
+        "name": "Chariot",
+        "positive": {
+            "related": "Succour, providence also war, triumph, presumption, vengeance, trouble."
+        },
+        "reversed": {
+            "related": "Riot, quarrel, dispute, litigation, defeat."
+        }
+    },
+    "08": {
+        "name": "Strength",
+        "positive": {
+            "related": "Power, energy, action, courage, magnanimity; also complete success and honours."
+        },
+        "reversed": {
+            "related": "Despotism, abuse if power, weakness, discord, sometimes even disgrace."
+        }
+    },
+    "09": {
+        "name": "Hermit",
+        "positive": {
+            "related": "Prudence, circumspection; also and especially treason, dissimulation, roguery, corruption."
+        },
+        "reversed": {
+            "related": "Concealment, disguise, policy, fear, unreasoned caution."
+        }
+    },
+    "10": {
+        "name": "Wheel of Fortune",
+        "positive": {
+            "related": "Destiny, fortune, success, elevation, luck, felicity."
+        },
+        "reversed": {
+            "related": "Increase, abundance, superfluity."
+        }
+    },
+    "11": {
+        "name": "Justice",
+        "positive": {
+            "related": "Equity, rightness, probity, executive; triumph of the deserving side in law."
+        },
+        "reversed": {
+            "related": "Law in all its departments, legal complications, bigotry, bias, excessive severity."
+        }
+    },
+    "12": {
+        "name": "Hanged Man",
+        "positive": {
+            "related": "Wisdom, circumspection, discernment, trials, sacrifice, intuition, divination, prophecy."
+        },
+        "reversed": {
+            "related": "Selfishness, the crowd, body politic."
+        }
+    },
+    "13": {
+        "name": "Death",
+        "positive": {
+            "related": "End, mortality, destruction, corruption also, for a man, the loss of a benefactor for a woman, many contrarieties; for a maid, failure of marriage projects."
+        },
+        "reversed": {
+            "related": "Inertia, sleep, lethargy, petrifaction, somnambulism; hope destroyed."
+        }
+    },
+    "14": {
+        "name": "Temperance",
+        "positive": {
+            "related": "Economy, moderation, frugality, management, accommodation."
+        },
+        "reversed": {
+            "related": "Things connected with churches, religions, sects, the priesthood, sometimes even the priest who will marry the Querent; also disunion, unfortunate combinations, competing interests."
+        }
+    },
+    "15": {
+        "name": "Devil",
+        "positive": {
+            "related": "Ravage, violence, vehemence, extraordinary efforts, force, fatality; that which is predestined but is not for this reason evil."
+        },
+        "reversed": {
+            "related": "Evil fatality, weakness, pettiness, blindness."
+        }
+    },
+    "16": {
+        "name": "Tower",
+        "positive": {
+            "related": "Misery, distress, indigence, adversity, calamity, disgrace, deception, ruin. It is a card in particular of unforeseen catastrophe."
+        },
+        "reversed": {
+            "related": "According to one account, the same in a lesser degree also oppression, imprisonment, tyranny."
+        }
+    },
+    "17": {
+        "name": "Star",
+        "positive": {
+            "related": "Loss, theft, privation, abandonment; another reading says-hope and bright prospects,"
+        },
+        "reversed": {
+            "related": "Arrogance, haughtiness, impotence."
+        }
+    },
+    "18": {
+        "name": "Moon",
+        "positive": {
+            "related": "Hidden enemies, danger, calumny, darkness, terror, deception, occult forces, error."
+        },
+        "reversed": {
+            "related": "Instability, inconstancy, silence, lesser degrees of deception and error."
+        }
+    },
+    "19": {
+        "name": "Sun",
+        "positive": {
+            "related": "Material happiness, fortunate marriage, contentment."
+        },
+        "reversed": {
+            "related": "The same in a lesser sense."
+        }
+    },
+    "20": {
+        "name": "Judgement",
+        "positive": {
+            "related": "Change of position, renewal, outcome. Another account specifies total loss though lawsuit."
+        },
+        "reversed": {
+            "related": "Weakness, pusillanimity, simplicity; also deliberation, decision, sentence."
+        }
+    },
+    "21": {
+        "name": "World",
+        "positive": {
+            "related": "Assured success, recompense, voyage, route, emigration, flight, change of place."
+        },
+        "reversed": {
+            "related": "Inertia, fixity, stagnation, permanence."
+        }
+    },
+    "22": {
+        "name": "Ace of Swords",
+        "positive": {
+            "related": "Triumph, the excessive degree in everything, conquest, triumph of force. It is a card of great force, in love as well as in hatred. The crown may carry a much higher significance than comes usually within the sphere of fortune-telling."
+        },
+        "reversed": {
+            "related": "The same, but the results are disastrous; another account says--conception, childbirth, augmentation, multiplicity."
+        }
+    },
+    "23": {
+        "name": "Two of Swords",
+        "positive": {
+            "related": "Conformity and the equipoise which it suggests, courage, friendship, concord in a state of arms; another reading gives tenderness, affection, intimacy. The suggestion of harmony and other favourable readings must be considered in a qualified manner, as Swords generally are not symbolical of beneficent forces in human affairs."
+        },
+        "reversed": {
+            "related": "Imposture, falsehood, duplicity, disloyalty."
+        }
+    },
+    "24": {
+        "name": "Three of Swords",
+        "positive": {
+            "related": "Removal, absence, delay, division, rupture, dispersion, and all that the design signifies naturally, being too simple and obvious to call for specific enumeration."
+        },
+        "reversed": {
+            "related": "Mental alienation, error, loss, distraction, disorder, confusion."
+        }
+    },
+    "25": {
+        "name": "Four of Swords",
+        "positive": {
+            "related": "Vigilance, retreat, solitude, hermit's repose, exile, tomb and coffin. It is these last that have suggested the design."
+        },
+        "reversed": {
+            "related": "Wise administration, circumspection, economy, avarice, precaution, testament."
+        }
+    },
+    "26": {
+        "name": "Five of Swords",
+        "positive": {
+            "related": "Degradation, destruction, revocation, infamy, dishonour, loss, with the variants and analogues of these."
+        },
+        "reversed": {
+            "related": "The same; burial and obsequies."
+        }
+    },
+    "27": {
+        "name": "Six of Swords",
+        "positive": {
+            "related": "journey by water, route, way, envoy, commissionary, expedient."
+        },
+        "reversed": {
+            "related": "Declaration, confession, publicity; one account says that it is a proposal of love."
+        }
+    },
+    "28": {
+        "name": "Seven of Swords",
+        "positive": {
+            "related": "Design, attempt, wish, hope, confidence; also quarrelling, a plan that may fail, annoyance. The design is uncertain in its import, because the significations are widely at variance with each other."
+        },
+        "reversed": {
+            "related": "Good advice, counsel, instruction, slander, babbling."
+        }
+    },
+    "29": {
+        "name": "Eight of Swords",
+        "positive": {
+            "related": "Bad news, violent chagrin, crisis, censure, power in trammels, conflict, calumny; also sickness."
+        },
+        "reversed": {
+            "related": "Disquiet, difficulty, opposition, accident, treachery; what is unforeseen; fatality."
+        }
+    },
+    "30": {
+        "name": "Nine of Swords",
+        "positive": {
+            "related": "Death, failure, miscarriage, delay, deception, disappointment, despair."
+        },
+        "reversed": {
+            "related": "Imprisonment, suspicion, doubt, reasonable fear, shame."
+        }
+    },
+    "31": {
+        "name": "Ten of Swords",
+        "positive": {
+            "related": "Whatsoever is intimated by the design; also pain, affliction, tears, sadness, desolation. It is not especially a card of violent death."
+        },
+        "reversed": {
+            "related": "Advantage, profit, success, favour, but none of these are permanent; also power and authority."
+        }
+    },
+    "32": {
+        "name": "Page of Swords",
+        "positive": {
+            "related": "Authority, overseeing, secret service, vigilance, spying, examination, and the qualities thereto belonging."
+        },
+        "reversed": {
+            "related": "More evil side of these qualities; what is unforeseen, unprepared state; sickness is also intimated."
+        }
+    },
+    "33": {
+        "name": "Knight of Swords",
+        "positive": {
+            "related": "Skill, bravery, capacity, defence, address, enmity, wrath, war, destruction, opposition, resistance, ruin. There is therefore a sense in which the card signifies death, but it carries this meaning only in its proximity to other cards of fatality."
+        },
+        "reversed": {
+            "related": "Imprudence, incapacity, extravagance."
+        }
+    },
+    "34": {
+        "name": "Queen of Swords",
+        "positive": {
+            "related": "Widowhood, female sadness and embarrassment, absence, sterility, mourning, privation, separation."
+        },
+        "reversed": {
+            "related": "Malice, bigotry, artifice, prudery, bale, deceit."
+        }
+    },
+    "35": {
+        "name": "King of Swords",
+        "positive": {
+            "related": "Whatsoever arises out of the idea of judgment and all its connexions-power, command, authority, militant intelligence, law, offices of the crown, and so forth."
+        },
+        "reversed": {
+            "related": "Cruelty, perversity, barbarity, perfidy, evil intention."
+        }
+    },
+    "36": {
+        "name": "Ace of Wands",
+        "positive": {
+            "related": "Creation, invention, enterprise, the powers which result in these; principle, beginning, source; birth, family, origin, and in a sense the virility which is behind them; the starting point of enterprises; according to another account, money, fortune, inheritance."
+        },
+        "reversed": {
+            "related": "Fall, decadence, ruin, perdition, to perish also a certain clouded joy."
+        }
+    },
+    "37": {
+        "name": "Two of Wands",
+        "positive": {
+            "related": "Between the alternative readings there is no marriage possible; on the one hand, riches, fortune, magnificence; on the other, physical suffering, disease, chagrin, sadness, mortification. The design gives one suggestion; here is a lord overlooking his dominion and alternately contemplating a globe; it looks like the malady, the mortification, the sadness of Alexander amidst the grandeur of this world's wealth."
+        },
+        "reversed": {
+            "related": "Surprise, wonder, enchantment, emotion, trouble, fear."
+        }
+    },
+    "38": {
+        "name": "Three of Wands",
+        "positive": {
+            "related": "He symbolizes established strength, enterprise, effort, trade, commerce, discovery; those are his ships, bearing his merchandise, which are sailing over the sea. The card also signifies able co-operation in business, as if the successful merchant prince were looking from his side towards yours with a view to help you."
+        },
+        "reversed": {
+            "related": "The end of troubles, suspension or cessation of adversity, toil and disappointment."
+        }
+    },
+    "39": {
+        "name": "Four of Wands",
+        "positive": {
+            "related": "They are for once almost on the surface--country life, haven of refuge, a species of domestic harvest-home, repose, concord, harmony, prosperity, peace, and the perfected work of these."
+        },
+        "reversed": {
+            "related": "The meaning remains unaltered; it is prosperity, increase, felicity, beauty, embellishment."
+        }
+    },
+    "40": {
+        "name": "Five of Wands",
+        "positive": {
+            "related": "Imitation, as, for example, sham fight, but also the strenuous competition and struggle of the search after riches and fortune. In this sense it connects with the battle of life. Hence some attributions say that it is a card of gold, gain, opulence."
+        },
+        "reversed": {
+            "related": "Litigation, disputes, trickery, contradiction."
+        }
+    },
+    "41": {
+        "name": "Six of Wands",
+        "positive": {
+            "related": "The card has been so designed that it can cover several significations; on the surface, it is a victor triumphing, but it is also great news, such as might be carried in state by the King's courier; it is expectation crowned with its own desire, the crown of hope, and so forth."
+        },
+        "reversed": {
+            "related": "Apprehension, fear, as of a victorious enemy at the gate; treachery, disloyalty, as of gates being opened to the enemy; also indefinite delay."
+        }
+    },
+    "42": {
+        "name": "Seven of Wands",
+        "positive": {
+            "related": "It is a card of valour, for, on the surface, six are attacking one, who has, however, the vantage position. On the intellectual plane, it signifies discussion, wordy strife; in business--negotiations, war of trade, barter, competition. It is further a card of success, for the combatant is on the top and his enemies may be unable to reach him."
+        },
+        "reversed": {
+            "related": "Perplexity, embarrassments, anxiety. It is also a caution against indecision."
+        }
+    },
+    "43": {
+        "name": "Eight of Wands",
+        "positive": {
+            "related": "Activity in undertakings, the path of such activity, swiftness, as that of an express messenger; great haste, great hope, speed towards an end which promises assured felicity; generally, that which is on the move; also the arrows of love."
+        },
+        "reversed": {
+            "related": "Arrows of jealousy, internal dispute, stingings of conscience, quarrels; and domestic disputes for persons who are married."
+        }
+    },
+    "44": {
+        "name": "Nine of Wands",
+        "positive": {
+            "related": "The card signifies strength in opposition. If attacked, the person will meet an onslaught boldly; and his build shews, that he may prove a formidable antagonist. With this main significance there are all its possible adjuncts--delay, suspension, adjournment."
+        },
+        "reversed": {
+            "related": "Obstacles, adversity, calamity."
+        }
+    },
+    "45": {
+        "name": "Ten of Wands",
+        "positive": {
+            "related": "A card of many significances, and some of the readings cannot be harmonized. I set aside that which connects it with honour and good faith. The chief meaning is oppression simply, but it is also fortune, gain, any kind of success, and then it is the oppression of these things. It is also a card of false-seeming, disguise, perfidy. The place which the figure is approaching may suffer from the rods that he carries. Success is stultified if the Nine of Swords follows, and if it is a question of a lawsuit, there will be certain loss."
+        },
+        "reversed": {
+            "related": "Contrarieties, difficulties, intrigues, and their analogies."
+        }
+    },
+    "46": {
+        "name": "Page of Wands",
+        "positive": {
+            "related": "Dark young man, faithful, a lover, an envoy, a postman. Beside a man, he will bear favourable testimony concerning him. A dangerous rival, if followed by the Page of Cups. Has the chief qualities of his suit. He may signify family intelligence."
+        },
+        "reversed": {
+            "related": "Anecdotes, announcements, evil news. Also indecision and the instability which accompanies it."
+        }
+    },
+    "47": {
+        "name": "Knight of Wands",
+        "positive": {
+            "related": "Departure, absence, flight, emigration. A dark young man, friendly. Change of residence."
+        },
+        "reversed": {
+            "related": "Rupture, division, interruption, discord."
+        }
+    },
+    "48": {
+        "name": "Queen of Wands",
+        "positive": {
+            "related": "A dark woman, countrywoman, friendly, chaste, loving, honourable. If the card beside her signifies a man, she is well disposed towards him; if a woman, she is interested in the Querent. Also, love of money, or a certain success in business."
+        },
+        "reversed": {
+            "related": "Good, economical, obliging, serviceable. Signifies also--but in certain positions and in the neighbourhood of other cards tending in such directions--opposition, jealousy, even deceit and infidelity."
+        }
+    },
+    "49": {
+        "name": "King of Wands",
+        "positive": {
+            "related": "Dark man, friendly, countryman, generally married, honest and conscientious. The card always signifies honesty, and may mean news concerning an unexpected heritage to fall in before very long."
+        },
+        "reversed": {
+            "related": "Good, but severe; austere, yet tolerant."
+        }
+    },
+    "50": {
+        "name": "Ace of Cups",
+        "positive": {
+            "related": "House of the true heart, joy, content, abode, nourishment, abundance, fertility; Holy Table, felicity hereof."
+        },
+        "reversed": {
+            "related": "House of the false heart, mutation, instability, revolution."
+        }
+    },
+    "51": {
+        "name": "Two of Cups",
+        "positive": {
+            "related": "Love, passion, friendship, affinity, union, concord, sympathy, the interrelation of the sexes, and--as a suggestion apart from all offices of divination--that desire which is not in Nature, but by which Nature is sanctified."
+        },
+        "reversed": {
+            "related": "Love, passion, friendship, affinity, union, concord, sympathy, the interrelation of the sexes, and--as a suggestion apart from all offices of divination--that desire which is not in Nature, but by which Nature is sanctified."
+        }
+    },
+    "52": {
+        "name": "Three of Cups",
+        "positive": {
+            "related": "The conclusion of any matter in plenty, perfection and merriment; happy issue, victory, fulfilment, solace, healing,"
+        },
+        "reversed": {
+            "related": "Expedition, dispatch, achievement, end. It signifies also the side of excess in physical enjoyment, and the pleasures of the senses."
+        }
+    },
+    "53": {
+        "name": "Four of Cups",
+        "positive": {
+            "related": "Weariness, disgust, aversion, imaginary vexations, as if the wine of this world had caused satiety only; another wine, as if a fairy gift, is now offered the wastrel, but he sees no consolation therein. This is also a card of blended pleasure."
+        },
+        "reversed": {
+            "related": "Novelty, presage, new instruction, new relations."
+        }
+    },
+    "54": {
+        "name": "Five of Cups",
+        "positive": {
+            "related": "It is a card of loss, but something remains over; three have been taken, but two are left; it is a card of inheritance, patrimony, transmission, but not corresponding to expectations; with some interpreters it is a card of marriage, but not without bitterness or frustration."
+        },
+        "reversed": {
+            "related": "News, alliances, affinity, consanguinity, ancestry, return, false projects."
+        }
+    },
+    "55": {
+        "name": "Six of Cups",
+        "positive": {
+            "related": "A card of the past and of memories, looking back, as--for example--on childhood; happiness, enjoyment, but coming rather from the past; things that have vanished. Another reading reverses this, giving new relations, new knowledge, new environment, and then the children are disporting in an unfamiliar precinct."
+        },
+        "reversed": {
+            "related": "The future, renewal, that which will come to pass presently."
+        }
+    },
+    "56": {
+        "name": "Seven of Cups",
+        "positive": {
+            "related": "Fairy favours, images of reflection, sentiment, imagination, things seen in the glass of contemplation; some attainment in these degrees, but nothing permanent or substantial is suggested."
+        },
+        "reversed": {
+            "related": "Desire, will, determination, project."
+        }
+    },
+    "57": {
+        "name": "Eight of Cups",
+        "positive": {
+            "related": "The card speaks for itself on the surface, but other readings are entirely antithetical--giving joy, mildness, timidity, honour, modesty. In practice, it is usually found that the card shews the decline of a matter, or that a matter which has been thought to be important is really of slight consequence--either for good or evil."
+        },
+        "reversed": {
+            "related": "Great joy, happiness, feasting."
+        }
+    },
+    "58": {
+        "name": "Nine of Cups",
+        "positive": {
+            "related": "Concord, contentment, physical bien-etre; also victory, success, advantage; satisfaction for the Querent or person for whom the consultation is made."
+        },
+        "reversed": {
+            "related": "Truth, loyalty, liberty; but the readings vary and include mistakes, imperfections, etc."
+        }
+    },
+    "59": {
+        "name": "Ten of Cups",
+        "positive": {
+            "related": "Contentment, repose of the entire heart; the perfection of that state; also perfection of human love and friendship; if with several picture-cards, a person who is taking charge of the Querent's interests; also the town, village or country inhabited by the Querent."
+        },
+        "reversed": {
+            "related": "Repose of the false heart, indignation, violence."
+        }
+    },
+    "60": {
+        "name": "Page of Cups",
+        "positive": {
+            "related": "Fair young man, one impelled to render service and with whom the Querent will be connected; a studious youth; news, message; application, reflection, meditation; also these things directed to business."
+        },
+        "reversed": {
+            "related": "Taste, inclination, attachment, seduction, deception, artifice."
+        }
+    },
+    "61": {
+        "name": "Knight of Cups",
+        "positive": {
+            "related": "Arrival, approach--sometimes that of a messenger; advances, proposition, demeanour, invitation, incitement."
+        },
+        "reversed": {
+            "related": "Trickery, artifice, subtlety, swindling, duplicity, fraud."
+        }
+    },
+    "62": {
+        "name": "Queen of Cups",
+        "positive": {
+            "related": "Good, fair woman; honest, devoted woman, who will do service to the Querent; loving intelligence, and hence the gift of vision; success, happiness, pleasure; also wisdom, virtue; a perfect spouse and a good mother."
+        },
+        "reversed": {
+            "related": "The accounts vary; good woman; otherwise, distinguished woman but one not to be trusted; perverse woman; vice, dishonour, depravity."
+        }
+    },
+    "63": {
+        "name": "King of Cups",
+        "positive": {
+            "related": "Fair man, man of business, law, or divinity; responsible, disposed to oblige the Querent; also equity, art and science, including those who profess science, law and art; creative intelligence."
+        },
+        "reversed": {
+            "related": "Dishonest, double-dealing man; roguery, exaction, injustice, vice, scandal, pillage, considerable loss."
+        }
+    },
+    "64": {
+        "name": "Ace of Pentacles",
+        "positive": {
+            "related": "Perfect contentment, felicity, ecstasy; also speedy intelligence; gold."
+        },
+        "reversed": {
+            "related": "The evil side of wealth, bad intelligence; also great riches. In any case it shews prosperity, comfortable material conditions, but whether these are of advantage to the possessor will depend on whether the card is reversed or not."
+        }
+    },
+    "65": {
+        "name": "Two of Pentacles",
+        "positive": {
+            "related": "On the one hand it is represented as a card of gaiety, recreation and its connexions, which is the subject of the design; but it is read also as news and messages in writing, as obstacles, agitation, trouble, embroilment."
+        },
+        "reversed": {
+            "related": "Enforced gaiety, simulated enjoyment, literal sense, handwriting, composition, letters of exchange."
+        }
+    },
+    "66": {
+        "name": "Three of Pentacles",
+        "positive": {
+            "related": "Metier, trade, skilled labour; usually, however, regarded as a card of nobility, aristocracy, renown, glory."
+        },
+        "reversed": {
+            "related": "Mediocrity, in work and otherwise, puerility, pettiness, weakness."
+        }
+    },
+    "67": {
+        "name": "Four of Pentacles",
+        "positive": {
+            "related": "The surety of possessions, cleaving to that which one has, gift, legacy, inheritance."
+        },
+        "reversed": {
+            "related": "Suspense, delay, opposition."
+        }
+    },
+    "68": {
+        "name": "Five of Pentacles",
+        "positive": {
+            "related": "The card foretells material trouble above all, whether in the form illustrated--that is, destitution--or otherwise. For some cartomancists, it is a card of love and lovers-wife, husband, friend, mistress; also concordance, affinities. These alternatives cannot be harmonized."
+        },
+        "reversed": {
+            "related": "Disorder, chaos, ruin, discord, profligacy."
+        }
+    },
+    "69": {
+        "name": "Six of Pentacles",
+        "positive": {
+            "related": "Presents, gifts, gratification another account says attention, vigilance now is the accepted time, present prosperity, etc."
+        },
+        "reversed": {
+            "related": "Desire, cupidity, envy, jealousy, illusion."
+        }
+    },
+    "70": {
+        "name": "Seven of Pentacles",
+        "positive": {
+            "related": "These are exceedingly contradictory; in the main, it is a card of money, business, barter; but one reading gives altercation, quarrels--and another innocence, ingenuity, purgation."
+        },
+        "reversed": {
+            "related": "Cause for anxiety regarding money which it may be proposed to lend."
+        }
+    },
+    "71": {
+        "name": "Eight of Pentacles",
+        "positive": {
+            "related": "Work, employment, commission, craftsmanship, skill in craft and business, perhaps in the preparatory stage."
+        },
+        "reversed": {
+            "related": "Voided ambition, vanity, cupidity, exaction, usury. It may also signify the possession of skill, in the sense of the ingenious mind turned to cunning and intrigue."
+        }
+    },
+    "72": {
+        "name": "Nine of Pentacles",
+        "positive": {
+            "related": "Prudence, safety, success, accomplishment, certitude, discernment."
+        },
+        "reversed": {
+            "related": "Roguery, deception, voided project, bad faith."
+        }
+    },
+    "73": {
+        "name": "Ten of Pentacles",
+        "positive": {
+            "related": "Gain, riches; family matters, archives, extraction, the abode of a family."
+        },
+        "reversed": {
+            "related": "Chance, fatality, loss, robbery, games of hazard; sometimes gift, dowry, pension."
+        }
+    },
+    "74": {
+        "name": "Page of Pentacles",
+        "positive": {
+            "related": "Application, study, scholarship, reflection another reading says news, messages and the bringer thereof; also rule, management."
+        },
+        "reversed": {
+            "related": "Prodigality, dissipation, liberality, luxury; unfavourable news."
+        }
+    },
+    "75": {
+        "name": "Knight of Pentacles",
+        "positive": {
+            "related": "Utility, serviceableness, interest, responsibility, rectitude-all on the normal and external plane."
+        },
+        "reversed": {
+            "related": "inertia, idleness, repose of that kind, stagnation; also placidity, discouragement, carelessness."
+        }
+    },
+    "76": {
+        "name": "Queen of Pentacles",
+        "positive": {
+            "related": "Opulence, generosity, magnificence, security, liberty."
+        },
+        "reversed": {
+            "related": "Evil, suspicion, suspense, fear, mistrust."
+        }
+    },
+    "77": {
+        "name": "King of Pentacles",
+        "positive": {
+            "related": "Valour, realizing intelligence, business and normal intellectual aptitude, sometimes mathematical gifts and attainments of this kind; success in these paths."
+        },
+        "reversed": {
+            "related": "Vice, weakness, ugliness, perversity, corruption, peril."
+        }
+    }
+}

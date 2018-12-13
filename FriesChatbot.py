@@ -17,15 +17,18 @@ class FriesChatbot:
 		self.function_map = {
 			'#召喚貓貓': self.function_photo,
 			'#召喚薯條': self.function_photo,
+			'#fries': self.function_photo,
 			'#貓貓籤筒': self.function_fortune,
 			'#貓貓塔羅': self.function_tarot,
+			'#tarot': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
+			'#interpret': self.function_en_explain,
             '#__MemberJoinedGroup__': self.function_join,
 		}
 
 	def response(self, msg, uid):
 		if not msg.startswith('#'): return None
-		cmd = msg.split()[0].replace("喵", "貓").replace("桶", "筒")
+		cmd = msg.split()[0].replace("喵", "貓").replace("桶", "筒").lower()
 		if self.function_map.get(cmd):
 			return self.function_map[cmd](msg, uid)
 		return self.function_simple_dialog(msg, uid)
@@ -94,6 +97,28 @@ class FriesChatbot:
 				return self.function_explain(query, uid)
 		return rtn_list
 
+	def function_en_explain(self, msg, uid):
+		arg = msg.split()
+		rtn_list = list()
+		m = len(arg)
+		if m > 1:
+			if m > 6: m = 6
+			for i in arg[1:m]:
+				card = TarotModule.en_getKeywordByID(TarotModule.name2id(i))
+				if card: rtn_list.append('"%s" indicate: %s' % (TarotModule.getEnNameByChtName(i), card))
+				else:
+					rtn_list.append("找不到「%s」的說\n如果是小阿卡納牌（寶劍、權杖、聖杯、錢幣）要把數量詞或宮廷人物放在後面喔~\n例如：寶劍三、聖杯王后" % i)
+		else:
+			last_tarot = self.dbm.get_lastest_tarot([uid])
+			if len(last_tarot) == 0:
+				rtn_list.append("請告訴我你想解的牌，例如：#貓貓解牌 寶劍騎士")
+			else:
+				query = "#interpret"
+				for i in last_tarot:
+					query += " " + i
+				return self.function_en_explain(query, uid)
+		return rtn_list
+
 	def function_join(self, msg, uid):
 		arg = msg.split(' ')
 		return [
@@ -136,6 +161,8 @@ if __name__ == "__main__":
 		"#喵喵塔羅",
 		# "#喵喵解牌",
 		"#喵喵籤桶",
+		"#tarot",
+		"#interpret",
 	]
 	for s in msg_list:
 		print("Receive", s, "Response", fc.response(s, uid))
