@@ -50,11 +50,12 @@ def callback():
 @handle.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     dt, uid, msg = log(event)
-    if msg == '現在幾點':
+    if '現在幾點' in msg:
         n = datetime.now()
         hh = n.hour()
         mm = n.minute()
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="現在 %d 點 %d 分" % (hh, mm)))
+        return
     if not msg.startswith("#"): return
     i = 0
     r = bot.response(msg, uid)
