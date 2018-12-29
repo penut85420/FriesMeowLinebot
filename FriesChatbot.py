@@ -109,7 +109,7 @@ class FriesChatbot:
 			if m > 6: m = 6
 			for i in arg[1:m]:
 				card = TarotModule.getMeaningByID(TarotModule.name2id(i))
-				if card: rtn_list.append("「%s」代表：%s" % (i, card))
+				if card: rtn_list.append("「%s」表示：%s" % (i, card))
 				else:
 					rtn_list.append("找不到「%s」的說\n如果是小阿卡納牌（寶劍、權杖、聖杯、錢幣）要把數量詞或宮廷人物放在後面喔~\n例如：寶劍三、聖杯王后" % i)
 		else:
