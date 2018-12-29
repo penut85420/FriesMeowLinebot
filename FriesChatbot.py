@@ -22,6 +22,7 @@ class FriesChatbot:
 			'#貓貓塔羅': self.function_tarot,
 			'#tarot': self.function_tarot,
 			'#貓貓解牌': self.function_explain,
+			'#貓貓解釋': self.function_meaning,
 			'#interpret': self.function_en_explain,
             '#__MemberJoinedGroup__': self.function_join,
 		}
@@ -97,6 +98,31 @@ class FriesChatbot:
 				return self.function_explain(query, uid)
 		return rtn_list
 
+	def function_meaning(self, msg, uid):
+		arg = msg.split()
+		rtn_list = list()
+		m = len(arg)
+		if m > 1 and arg[1] == '翻譯':
+			for item in TarotModule.getTranslate():
+				rtn_list.append(item)
+		elif m > 1:
+			if m > 6: m = 6
+			for i in arg[1:m]:
+				card = TarotModule.getMeaningByID(TarotModule.name2id(i))
+				if card: rtn_list.append("「%s」代表：%s" % (i, card))
+				else:
+					rtn_list.append("找不到「%s」的說\n如果是小阿卡納牌（寶劍、權杖、聖杯、錢幣）要把數量詞或宮廷人物放在後面喔~\n例如：寶劍三、聖杯王后" % i)
+		else:
+			last_tarot = self.dbm.get_lastest_tarot([uid])
+			if len(last_tarot) == 0:
+				rtn_list.append("請告訴我你想解的牌，例如：#貓貓解牌 寶劍騎士")
+			else:
+				query = "#貓貓解釋"
+				for i in last_tarot:
+					query += " " + i
+				return self.function_meaning(query, uid)
+		return rtn_list
+
 	def function_en_explain(self, msg, uid):
 		arg = msg.split()
 		rtn_list = list()
@@ -133,36 +159,40 @@ if __name__ == "__main__":
 	fc = FriesChatbot()
 	uid = 'U3c70a0e93aaa36c5643ab480f7f1a023'
 	msg_list = [
-		'#召喚貓貓',
-		"#貓貓籤筒 交往",
-		"#貓貓籤筒",
-		"#貓貓籤筒 ?",
-		"#貓貓塔羅",
-		"#貓貓塔羅 3",
-		"#貓貓塔羅 5",
-		"#貓貓塔羅 7",
-		"#貓貓塔羅 來亂",
-		"#沒這功能",
-		"#貓貓解牌 聖杯國王",
-		"#貓貓解牌 聖杯國王 世界",
-		"#貓貓解牌 聖杯國王 權杖王后 寶劍侍者 錢幣騎士 惡魔 戀人",
-		# "#貓貓解牌",
-		"#貓貓解牌 翻譯",
-		"#貓貓解牌 沒這張牌",
-		"#貓貓解牌 看不懂",
-		"#召喚威廷",
-		"#貓貓塔羅 10",
-		"#貓貓塔羅 20",
-		"#嗨",
-		"#召喚孫全",
-		# "#__MemberJoinedGroup__ ICC",
-		"#召喚薯條",
-		"#喵喵籤筒",
-		"#喵喵塔羅",
+		# '#召喚貓貓',
+		# "#貓貓籤筒 交往",
+		# "#貓貓籤筒",
+		# "#貓貓籤筒 ?",
+		# "#貓貓塔羅",
+		# "#貓貓塔羅 3",
+		# "#貓貓塔羅 5",
+		# "#貓貓塔羅 7",
+		# "#貓貓塔羅 來亂",
+		# "#沒這功能",
+		# "#貓貓解牌 聖杯國王",
+		# "#貓貓解牌 聖杯國王 世界",
+		# "#貓貓解牌 聖杯國王 權杖王后 寶劍侍者 錢幣騎士 惡魔 戀人",
+		# # "#貓貓解牌",
+		# "#貓貓解牌 翻譯",
+		# "#貓貓解牌 沒這張牌",
+		# "#貓貓解牌 看不懂",
+		# "#召喚威廷",
+		# "#貓貓塔羅 10",
+		# "#貓貓塔羅 20",
+		# "#嗨",
+		# "#召喚孫全",
+		# # "#__MemberJoinedGroup__ ICC",
+		# "#召喚薯條",
+		# "#喵喵籤筒",
+		# "#喵喵塔羅",
 		# "#喵喵解牌",
-		"#喵喵籤桶",
-		"#tarot",
-		"#interpret",
+		# "#喵喵籤桶",
+		# "#tarot",
+		# "#interpret",
+		"#貓貓解牌 女祭司",
+		"#貓貓解牌",
+		"#貓貓解釋 女祭司",
+		"#貓貓解釋",
 	]
 	for s in msg_list:
 		print("Receive", s, "Response", fc.response(s, uid))

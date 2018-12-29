@@ -69,7 +69,11 @@ def name2id(name):
     except: return None
 
 def getKeywordByID(id):
-    try: return tarot_data[id]['positive']['related']
+    try: return tarot_data[id]['positive']['related'] + tarot_data[id]['positive']['behavior']
+    except: return None
+
+def getMeaningByID(id):
+    try: return tarot_data[id]['positive']['meaning']
     except: return None
 
 def en_getKeywordByID(id):
@@ -78,7 +82,7 @@ def en_getKeywordByID(id):
 
 def getEnNameByChtName(n):
     try: return tarot_cht_eng[n]
-    except: 
+    except:
         print("What is", n)
         return None
 
