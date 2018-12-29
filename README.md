@@ -9,28 +9,29 @@
 <img src="https://i.imgur.com/VZ5F1X0.jpg"/><br/>
 </p>
 
-[FriesLinebot Readme 圖片版說明](https://tinyurl.com/FriesLinebotR)  
+[FriesLinebot Readme 圖片版說明](https://tinyurl.com/FriesLinebotR)
 [FriesLinebot Readme 文字版說明](https://tinyurl.com/FriesLinebot)
 
 ## 薯條喵喵喵ω
 
-> 本喵皇是個 Line 上的 Bot  
-> 平常只會喵喵叫  
-> 偶而幫你抽個詩籤占個卜  
-> 喵喵喵  
+> 本喵皇是個 Line 上的 Bot
+> 平常只會喵喵叫
+> 偶而幫你抽個詩籤占個卜
+> 喵喵喵
 
 ## 目錄
 + [功能](#功能)
-	+ [`#召喚貓貓`](#召喚貓貓)
+	+ [`#召喚薯條`](#召喚薯條)
 	+ [`#貓貓籤筒`](#貓貓籤筒)
 	+ [`#貓貓塔羅`](#貓貓塔羅)
 	+ [`#貓貓解牌`](#貓貓解牌)
+	+ [`#貓貓解釋`](#貓貓解釋)
 + [注意事項](#注意事項)
 + [參考資料](#參考資料)
 
 ### 功能
 
-#### `#召喚貓貓`
+#### `#召喚薯條`
 + 傳送一張喵皇薯條的照片給你看
 > ![召喚貓貓](https://i.imgur.com/VJmizejm.png)
 
@@ -56,6 +57,10 @@
 > ![貓貓解牌](https://i.imgur.com/S4W1HlJm.png)
 + 也可以在後面加上牌的名稱獨立解釋
 > ![貓貓解牌 魔術師](https://i.imgur.com/HBx7ylem.png)
+
+#### `#貓貓解釋`
++ 用法與解牌相似，不過會有更詳細的解釋
++ [示範 貓貓解釋 寶劍騎士](https://i.imgur.com/1BAIdYhm.png)
 
 ### 注意事項
 這個 Bot 主要作為學術使用，目的是為了蒐集占卜的短問題。除了希望大家可以在占卜的時候多多加上自己的提問，也提醒大家：「使用者與薯條的對話、薯條所在的聊天室都會接收到訊息，伺服器端為了除錯會把訊息顯示出來，但不會將與占卜無關的訊息和回應紀錄於資料庫中，使用時請斟酌適量。」
