@@ -2,6 +2,8 @@ import json
 import random
 from random import shuffle
 
+import yaml
+
 data_path = 'Data/TarotIndex.tsv'
 tarot_path = 'Data/TarotCht.json'
 tarot_en_path = 'Data/TarotEng.json'
@@ -12,27 +14,31 @@ trans_idx_path = 'Data/TarotIndex.tsv'
 tarot_idx = dict()
 tarot_idxr = dict()
 tarot_cht_eng = dict()
-with open(data_path, 'r', encoding='utf8') as fin:
+with open(data_path, 'r', encoding='UTF-8') as fin:
     for line in fin:
         i, _, n = line.strip().split('\t')
         tarot_idx[i] = n
         tarot_idxr[n] = i
 
 # Load tarot json data.
-tarot_data = json.load(open(tarot_path, 'r', encoding='utf8'))
+tarot_data = json.load(open(tarot_path, 'r', encoding='UTF-8'))
 
 # Load eng tarot json data.
-tarot_en_data = json.load(open(tarot_en_path, 'r', encoding='utf8'))
+tarot_en_data = json.load(open(tarot_en_path, 'r', encoding='UTF-8'))
+
+# Load config
+with open('./config.yaml', 'r', encoding='UTF-8') as fin:
+    config = yaml.load(fin, Loader=yaml.BaseLoader)
 
 # Get translate info string.
 translate_info = ""
-with open(trans_path, 'r', encoding='utf8') as fin:
+with open(trans_path, 'r', encoding='UTF-8') as fin:
     for line in fin:
         translate_info += line
 translate_info = [translate_info, "大阿卡納牌使用翻譯請參考\nhttps://tinyurl.com/TarotTranslate"]
 
 # Get cht card name map to eng card name
-with open(trans_idx_path, 'r', encoding='utf8') as fin:
+with open(trans_idx_path, 'r', encoding='UTF-8') as fin:
     for line in fin:
         s = line.strip().split('\t')
         tarot_cht_eng[s[2]] = s[1]
@@ -40,11 +46,11 @@ with open(trans_idx_path, 'r', encoding='utf8') as fin:
 # Get a random tarot img
 def get_rand_tarot():
     i = random.randint(0, 77)
-    return "https://daoppailoli.ddns.net:5000/tarot/%.2d.jpg" % i
+    return "https://%s:%s/tarot/%.2d.jpg" % (config['domain'], config['port'], i)
 
 # Get img url by id
 def get_img_by_id(i):
-    return "https://daoppailoli.ddns.net:5000/tarot/%.2d.jpg" % i
+    return "https://%s:%s/tarot/%.2d.jpg" % (config['domain'], config['port'], i)
 
 # Get many random tarot id
 def get_shuffle_deck(n):

@@ -7,7 +7,8 @@ class DatabaseManager:
         self.load_config()
     
     def load_config(self):
-        self.config = yaml.load(open('config_database.yaml', 'r'))
+        with open('config_database.yaml', 'r') as fin:
+            self.config = yaml.load(fin, Loader=yaml.BaseLoader)
 
     # Common Database Operation
 

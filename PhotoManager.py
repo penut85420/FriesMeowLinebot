@@ -1,4 +1,10 @@
-import os, random
+import os
+import random
+
+import yaml
+
+with open('./config.yaml', 'r', encoding='UTF-8') as fin:
+    config = yaml.load(fin, Loader=yaml.BaseLoader)
 
 def rand_img():
     for _, _, flist in os.walk('Images/'):
@@ -6,4 +12,4 @@ def rand_img():
     return 'P_20180408_142950_vHDR_On.jpg'
 
 def rand_imgurl():
-    return 'https://daoppailoli.ddns.net:5000/images/' + rand_img()
+    return 'https://%s:%s/images/%s' % (config['domain'], config['port'], rand_img())

@@ -1,23 +1,27 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import importlib
+import json
 import random
 import re
 from datetime import datetime
 
 import yaml
-
-import TarotModule
-from DatabaseManager import DatabaseManager
 from flask import Flask, abort, request, send_file
-from FriesChatbot import FriesChatbot
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import (ImageSendMessage, MessageEvent, TextMessage,
                             TextSendMessage)
 
+import TarotModule
+from DatabaseManager import DatabaseManager
+from FriesChatbot import FriesChatbot
+
 app = Flask(__name__)
 
-config = yaml.load(open('config.yaml', 'r', encoding='utf8'))
+with open('config.yaml', 'r', encoding='UTF-8') as fin:
+    config = yaml.load(fin, Loader=yaml.BaseLoader)
+
 line_bot_api = LineBotApi(config['token'])
 handle = WebhookHandler(config['channel'])
 bot = FriesChatbot()
@@ -26,7 +30,7 @@ file_pattern = re.compile("https.*//?(?P<name>.*\\.(.*))")
 
 @app.route("/")
 def hello():
-    return "Meow Meow Meow"
+    return "Meow Meow Meow", 200
 
 @app.route('/images/<string:pid>')
 def get_image(pid):
@@ -44,6 +48,8 @@ def callback():
         handle.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
+    except:
+        return 'What?'
 
     return 'OK'
 
@@ -103,5 +109,8 @@ def log(event):
     return dt, user_id, msg 
 
 if __name__ == "__main__":
-    app.run(host=config['ip'], port=config['port'], debug=True
-        , ssl_context=(config['cert'], config['key']))
+    app.testing = True
+    app.run(
+        host=config['ip'], port=config['port'],
+        debug=True, ssl_context=(config['cert'], config['key'])
+    )
