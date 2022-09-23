@@ -9,7 +9,7 @@ Jinja2==2.10.1
 line-bot-sdk==1.12.1
 MarkupSafe==1.1.1
 mysql-connector-python==8.0.16
-protobuf==3.8.0
+protobuf==3.18.3
 PyYAML==5.1.1
 requests==2.22.0
 six==1.12.0
